@@ -302,6 +302,18 @@ article {
     font-weight: 600;
 }
 
+/* Eyebrow Label above the article title */
+.article-eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--highlight);
+    margin-bottom: 0.85rem;
+    opacity: 0.85;
+}
+
 .article-title {
     /* Fluid typography that scales gracefully */
     font-size: clamp(2rem, 5vw, 2.75rem);
