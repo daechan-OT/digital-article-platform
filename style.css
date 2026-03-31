@@ -85,7 +85,7 @@ a {
 .header-top {
     background-color: var(--bg-color);
     border-bottom: 1px solid var(--border-color);
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.25rem;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -95,7 +95,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: 1050px; /* Unified with article-container */
     margin: 0 auto;
     height: 56px;
     gap: 1rem;
@@ -140,12 +140,12 @@ a {
 /* Bottom Tier (Breadcrumbs / Secondary Header) */
 .header-bottom {
     background-color: var(--highlight);
-    padding: 0.75rem 1rem;
+    padding: 0.75rem 1.25rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .breadcrumb-container {
-    max-width: var(--max-reading-width);
+    max-width: 1050px; /* Unified with article-container */
     margin: 0 auto;
 }
 
@@ -186,13 +186,120 @@ a {
 }
 
 /* =========================================
-   Main Article Layout & Component Setup
+   Main Article Layout & TOC Sidebar Setup
    ========================================= */
 
 .article-container {
+    max-width: 1050px; /* Expanded for desktop grid */
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 5rem 1.25rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+    .article-container {
+        grid-template-columns: 240px 1fr;
+        gap: 4rem;
+        align-items: start;
+    }
+}
+
+article {
     max-width: var(--max-reading-width);
     margin: 0 auto;
-    padding: 2.5rem 1.25rem 5rem 1.25rem; /* Spacious padding */
+    width: 100%;
+}
+
+/* =========================================
+   Table of Contents & Progress Bar
+   ========================================= */
+
+.toc-sidebar {
+    display: none; /* Mobile hide */
+}
+
+@media (min-width: 1024px) {
+    .toc-sidebar {
+        display: block;
+        position: sticky;
+        top: 88px; /* Safe offset from sticky header */
+        max-height: calc(100vh - 120px);
+    }
+}
+
+.toc-sticky-container {
+    display: flex;
+    gap: 1.5rem;
+    height: 100%;
+}
+
+.progress-track {
+    width: 3px;
+    background-color: var(--border-color);
+    border-radius: 3px;
+    position: relative;
+    height: 100%;
+    min-height: 180px; 
+}
+
+.progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: var(--search-btn-bg); /* Matches primary green */
+    border-radius: 3px;
+    transition: height 0.1s ease-out;
+}
+
+.toc-nav {
+    flex-grow: 1;
+}
+
+.toc-title {
+    font-size: 0.75rem;
+    color: var(--meta-text-color);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.25rem;
+    font-family: var(--font-body);
+    /* Safe multi-line truncation */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+#toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#toc-list li {
+    margin-bottom: 0.85rem;
+}
+
+.toc-link {
+    font-size: 0.95rem;
+    color: var(--meta-text-color);
+    text-decoration: none;
+    transition: color 0.15s ease, font-weight 0.15s ease;
+    display: block;
+    line-height: 1.4;
+}
+
+.toc-link:hover {
+    color: var(--text-primary);
+}
+
+.toc-link.active {
+    color: var(--text-primary);
+    font-weight: 600;
 }
 
 .article-title {
@@ -247,13 +354,13 @@ a {
 }
 
 .article-hero-image img,
-.article-body img {
-    width: 100%;
+.article-body img,
+.article-infographic img {
+    max-width: 100%;
     height: auto;
+    width: 100%;
     display: block;
     background-color: #f1f1f1; /* Placeholder loader backer */
-    aspect-ratio: 16/9;        /* Control placeholder flow */
-    object-fit: cover;
 }
 
 figcaption {
@@ -420,6 +527,19 @@ figcaption {
     aspect-ratio: 16/9;
     background-color: #f1f1f1;
     border-radius: 4px;
+    overflow: hidden;
+}
+
+.card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.reading-card:hover .card-thumb img {
+    transform: scale(1.04);
 }
 
 .card-content h4 {

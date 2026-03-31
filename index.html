@@ -46,7 +46,8 @@
             <div class="header-right">
                 <button class="icon-btn" aria-label="User Account">
                     <!-- User Account Icon -->
-                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
                         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                         <circle cx="12" cy="7" r="4"></circle>
                     </svg>
@@ -70,6 +71,28 @@
 
     <!-- Main Content Area centered like Medium -->
     <main class="article-container">
+        <!-- Interactive TOC Sidebar -->
+        <aside class="toc-sidebar">
+            <div class="toc-sticky-container">
+                <div class="progress-track">
+                    <div class="progress-bar" id="reading-progress"></div>
+                </div>
+                <nav class="toc-nav">
+                    <h3 class="toc-title"
+                        title="Beyond &quot;Being Nice&quot;: The Manager’s Guide to Appreciation and Validation">Beyond
+                        "Being Nice": The Manager’s Guide to Appreciation and Validation</h3>
+                    <ul id="toc-list">
+                        <li><a href="#tool-1" class="toc-link">Tool 1: Appreciation</a></li>
+                        <li><a href="#tool-2" class="toc-link">Tool 2: Validation</a></li>
+                        <li><a href="#balancing-act" class="toc-link">The Balancing Act</a></li>
+                        <li><a href="#10x-rule" class="toc-link">The 10x Rule</a></li>
+                        <li><a href="#aaa-method" class="toc-link">The AAA Method</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <article>
             <header class="article-header">
                 <!-- Blog Post Title -->
                 <h1 class="article-title">Beyond "Being Nice": The Manager’s Guide to Appreciation and Validation</h1>
@@ -89,78 +112,115 @@
 
             <!-- Lead Image (Hero) -->
             <figure class="article-hero-image">
-                <img src="/assets/hero_manager_empathy.png" alt="A candid, professional photograph taken inside a bustling modern cafe environment. A manager is looking empathetically at a young employee.">
+                <img src="/assets/hero_manager_empathy.png"
+                    alt="A candid, professional photograph taken inside a bustling modern cafe environment. A manager is looking empathetically at a young employee.">
                 <figcaption>Mastering the balance of appreciation and validation is key to team resilience.</figcaption>
             </figure>
 
             <div class="article-body">
-                <p>In the hustle of a busy shift, it’s easy to lump appreciation and validation together under the generic umbrella of "being nice." We throw out a "great job today!" and assume we’ve done our part to keep morale high.</p>
+                <p>In the hustle of a busy shift, it’s easy to lump appreciation and validation together under the
+                    generic umbrella of "being nice." We throw out a "great job today!" and assume we’ve done our part
+                    to keep morale high.</p>
 
-                <p>But if you want to be a truly effective manager, you need to treat appreciation and validation as two distinct tools in your leadership kit.</p>
+                <p>But if you want to be a truly effective manager, you need to treat appreciation and validation as two
+                    distinct tools in your leadership kit.</p>
 
-                <p>Here is the fundamental difference: <strong>Appreciation is about the value of the work. Validation is about the reality of the human doing it.</strong> Understanding how and when to use both is the secret to transforming a burned-out crew into a resilient, highly motivated team. Let’s break down how they work.</p>
+                <p>Here is the fundamental difference: <strong>Appreciation is about the value of the work. Validation
+                        is about the reality of the human doing it.</strong> Understanding how and when to use both is
+                    the secret to transforming a burned-out crew into a resilient, highly motivated team. Let’s break
+                    down how they work.</p>
 
-                <h2>Tool 1: Appreciation ("I Value You and Your Contribution")</h2>
-                <p>Appreciation is the act of acknowledging a specific effort, skill, personality trait, or action that a person brings to the table.</p>
+                <h2 id="tool-1">Tool 1: Appreciation ("I Value You and Your Contribution")</h2>
+                <p>Appreciation is the act of acknowledging a specific effort, skill, personality trait, or action that
+                    a person brings to the table.</p>
 
-                <p><strong>The Operational Purpose:</strong> It builds retention and confidence. Research consistently shows that people don't learn through negative critique; they learn through positive examples. Appreciation actively reinforces the behaviors you want to see repeated.</p>
+                <p><strong>The Operational Purpose:</strong> It builds retention and confidence. Research consistently
+                    shows that people don't learn through negative critique; they learn through positive examples.
+                    Appreciation actively reinforces the behaviors you want to see repeated.</p>
 
                 <blockquote>
-                    <p>"I really appreciate how you stayed calm and kept the 'Care' vibe alive even when that guest was being difficult. You are a huge asset to this crew."</p>
+                    <p>"I really appreciate how you stayed calm and kept the 'Care' vibe alive even when that guest was
+                        being difficult. You are a huge asset to this crew."</p>
                 </blockquote>
 
-                <p><strong>The Result:</strong> The team member feels valued. They leave their shift thinking, "My manager noticed I worked hard," which is exactly what makes them want to show up and give their best again tomorrow.</p>
+                <p><strong>The Result:</strong> The team member feels valued. They leave their shift thinking, "My
+                    manager noticed I worked hard," which is exactly what makes them want to show up and give their best
+                    again tomorrow.</p>
 
-                <h2>Tool 2: Validation ("I See Your Reality")</h2>
-                <p>Validation is the act of recognizing a person’s internal state or the sheer difficulty of a situation—without trying to "fix" it, minimize it, or judge it.</p>
+                <h2 id="tool-2">Tool 2: Validation ("I See Your Reality")</h2>
+                <p>Validation is the act of recognizing a person’s internal state or the sheer difficulty of a
+                    situation—without trying to "fix" it, minimize it, or judge it.</p>
 
-                <p><strong>The Operational Purpose:</strong> It builds psychological safety. When a team member is stressed during a massive rush, they don't need a cheerleader; they need to know you understand why they are stressed.</p>
+                <p><strong>The Operational Purpose:</strong> It builds psychological safety. When a team member is
+                    stressed during a massive rush, they don't need a cheerleader; they need to know you understand why
+                    they are stressed.</p>
 
-                <p><strong>What It Sounds Like:</strong> Instead of saying, "Don't be stressed, you've got this," try saying, "I know it’s frustrating when the guest changes their order three times at the window. I’d be annoyed too."</p>
+                <p><strong>What It Sounds Like:</strong> Instead of saying, "Don't be stressed, you've got this," try
+                    saying, "I know it’s frustrating when the guest changes their order three times at the window. I’d
+                    be annoyed too."</p>
 
-                <p><strong>The Result:</strong> The team member feels accepted. By validating their reality, their brain stops fighting the frustration and can quickly refocus on the task at hand.</p>
+                <p><strong>The Result:</strong> The team member feels accepted. By validating their reality, their brain
+                    stops fighting the frustration and can quickly refocus on the task at hand.</p>
 
                 <!-- Core Difference Infographic -->
                 <figure class="article-infographic">
-                    <img src="/assets/infographic_appreciation_vs_validation.png" alt="Infographic showing the core difference: Appreciation Values the Work, Validation Sees the Human.">
+                    <img src="/assets/infographic_appreciation_vs_validation.png"
+                        alt="Infographic showing the core difference: Appreciation Values the Work, Validation Sees the Human.">
                 </figure>
 
-                <h2>The Balancing Act: Why You Need Both</h2>
-                <p>Together, appreciation and validation form a complete loop of care. As a leader, you must differentiate them because relying on one without the other will inevitably feel "off" to your team.</p>
+                <h2 id="balancing-act">The Balancing Act: Why You Need Both</h2>
+                <p>Together, appreciation and validation form a complete loop of care. As a leader, you must
+                    differentiate them because relying on one without the other will inevitably feel "off" to your team.
+                </p>
 
                 <ul>
-                    <li><strong>Appreciation without Validation feels dismissive.</strong> If you cheerfully say "Great job today!" to someone who is clearly exhausted after a terrible shift, it signals that you weren't actually paying attention to their struggle.</li>
-                    <li><strong>Validation without Appreciation feels incomplete.</strong> If you only say, "I know today was hard," the team member knows you saw their struggle, but they don’t know if you actually value the fact that they pushed through it.</li>
+                    <li><strong>Appreciation without Validation feels dismissive.</strong> If you cheerfully say "Great
+                        job today!" to someone who is clearly exhausted after a terrible shift, it signals that you
+                        weren't actually paying attention to their struggle.</li>
+                    <li><strong>Validation without Appreciation feels incomplete.</strong> If you only say, "I know
+                        today was hard," the team member knows you saw their struggle, but they don’t know if you
+                        actually value the fact that they pushed through it.</li>
                 </ul>
 
-                <h2>The 10x Rule of Recognition</h2>
-                <p>Human brains are naturally hardwired with a negativity bias; we notice mistakes far more easily than we notice successes. Because of this, managers have to work ten times harder to model a culture of appreciation than a culture of critique.</p>
+                <h2 id="10x-rule">The 10x Rule of Recognition</h2>
+                <p>Human brains are naturally hardwired with a negativity bias; we notice mistakes far more easily than
+                    we notice successes. Because of this, managers have to work ten times harder to model a culture of
+                    appreciation than a culture of critique.</p>
 
-                <p>If the only time you speak up is to correct a mistake, you are modeling a "Gotcha Culture." To model a "Care Culture," you must be caught constantly finding people doing things right.</p>
+                <p>If the only time you speak up is to correct a mistake, you are modeling a "Gotcha Culture." To model
+                    a "Care Culture," you must be caught constantly finding people doing things right.</p>
 
-                <!-- 10x Rule Infographic -->
-                <figure class="article-infographic">
-                    <img src="/assets/infographic_10x_rule.png" alt="3D balance scale showing 10x Appreciation weighing equal to 1x Critique.">
-                </figure>
+                <p>For every single time you have to nudge someone on a technical error, challenge yourself to find ten
+                    small moments to acknowledge or appreciate them. When your team sees you actively looking for the
+                    good, they will start doing the exact same thing for each other. You are setting the default tone of
+                    your workplace to "Celebrating Achievements."</p>
 
-                <p>For every single time you have to nudge someone on a technical error, challenge yourself to find ten small moments to acknowledge or appreciate them. When your team sees you actively looking for the good, they will start doing the exact same thing for each other. You are setting the default tone of your workplace to "Celebrating Achievements."</p>
-
-                <h2>Put It Into Practice: The AAA Method</h2>
+                <h2 id="aaa-method">Put It Into Practice: The AAA Method</h2>
 
                 <!-- AAA Method Infographic -->
                 <figure class="article-infographic">
-                    <img src="/assets/infographic_aaa_method.png" alt="Step by step infographic of the AAA method: Acknowledge the Action, Approve the Feeling, Appreciate the Person.">
+                    <img src="/assets/infographic_aaa_method.png"
+                        alt="Step by step infographic of the AAA method: Acknowledge the Action, Approve the Feeling, Appreciate the Person.">
                 </figure>
 
-                <p>Validation and appreciation are the highest forms of care. Ultimately, most people quit their jobs because they feel invisible. The AAA Method is a simple framework to ensure your team feels seen and respected, especially during high-pressure moments.</p>
+                <p>Validation and appreciation are the highest forms of care. Ultimately, most people quit their jobs
+                    because they feel invisible. The AAA Method is a simple framework to ensure your team feels seen and
+                    respected, especially during high-pressure moments.</p>
 
                 <ol>
-                    <li><strong>Acknowledge (The Action):</strong> Call out exactly what you see happening. <em>Example: “I saw how you handled that triple-order rush while the phone was ringing.”</em></li>
-                    <li><strong>Approve the Feeling (The Empathy):</strong> Validate the emotional reality of the work. <em>Example: “I know that was stressful, and it's completely frustrating when the guest changes their mind at the window.”</em></li>
-                    <li><strong>Appreciate the Person (The Value):</strong> Tie the action back to who they are as a person. <em>Example: “I’m so grateful for your patience. You are the reason this team stays calm when things get crazy.”</em></li>
+                    <li><strong>Acknowledge (The Action):</strong> Call out exactly what you see happening. <em>Example:
+                            “I saw how you handled that triple-order rush while the phone was ringing.”</em></li>
+                    <li><strong>Approve the Feeling (The Empathy):</strong> Validate the emotional reality of the work.
+                        <em>Example: “I know that was stressful, and it's completely frustrating when the guest changes
+                            their mind at the window.”</em></li>
+                    <li><strong>Appreciate the Person (The Value):</strong> Tie the action back to who they are as a
+                        person. <em>Example: “I’m so grateful for your patience. You are the reason this team stays calm
+                            when things get crazy.”</em></li>
                 </ol>
 
-                <p>Great leadership isn't just about managing the workflow; it's about managing the environment. By mastering both appreciation and validation, you don't just get better workers—you build a better workplace.</p>
+                <p>Great leadership isn't just about managing the workflow; it's about managing the environment. By
+                    mastering both appreciation and validation, you don't just get better workers—you build a better
+                    workplace.</p>
             </div>
 
             <!-- More to Read Section -->
@@ -169,14 +229,18 @@
                 <h3 class="section-subtitle">More to Read</h3>
                 <div class="reading-grid">
                     <div class="reading-card">
-                        <div class="card-thumb"></div>
+                        <div class="card-thumb">
+                            <img src="/assets/building-trust.png" alt="Building High-Performance Teams through Trust">
+                        </div>
                         <div class="card-content">
                             <h4>Building High-Performance Teams through Trust</h4>
                             <p>Discover the foundational elements of psychological safety and its impact on output.</p>
                         </div>
                     </div>
                     <div class="reading-card">
-                        <div class="card-thumb"></div>
+                        <div class="card-thumb">
+                            <img src="/assets/The Art of the 1-1 Meeting.png" alt="The Art of the 1:1 Meeting">
+                        </div>
                         <div class="card-content">
                             <h4>The Art of the 1:1 Meeting</h4>
                             <p>How to turn simple check-ins into powerful growth sessions for your direct reports.</p>
@@ -203,6 +267,61 @@
             </div>
         </div>
     </footer>
+
+    <!-- Interactive Navigation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('h2[id]');
+            const tocLinks = document.querySelectorAll('.toc-link');
+            const progressBar = document.getElementById('reading-progress');
+
+            // Highlight active section on scroll
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -70% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        tocLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => observer.observe(section));
+
+            // Update Vertical Scroll Progress Bar
+            const updateProgress = () => {
+                const article = document.querySelector('article');
+                if (!article) return;
+
+                const rect = article.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+
+                // Calculate distance based on top of article crossing middle of screen
+                const distanceScrolled = (windowHeight / 2) - rect.top;
+                const totalDistance = rect.height;
+
+                let percentage = (distanceScrolled / totalDistance) * 100;
+
+                // Restrict between 0 and 100%
+                percentage = Math.max(0, Math.min(100, percentage));
+
+                progressBar.style.height = `${percentage}%`;
+            };
+
+            window.addEventListener('scroll', updateProgress, { passive: true });
+            updateProgress(); // Initial check
+        });
+    </script>
 </body>
 
 </html>
