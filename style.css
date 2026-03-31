@@ -1,0 +1,509 @@
+/* =========================================
+   CSS Reset & Base Variables
+   ========================================= */
+
+:root {
+    /* Strict Color Palette from Requirements */
+    --bg-color: #ffffff;
+    --text-primary: #40000F;
+    --text-light: #FFF9EF;
+    --highlight: #930018;
+    
+    /* Secondary/Utility Colors */
+    --search-btn-bg: #2E7D32; /* WCAG compliant green submit button contrast */
+    --search-btn-hover: #1B5E20;
+    --border-color: rgba(64, 0, 15, 0.1);    /* Derived from primary */
+    --meta-text-color: rgba(64, 0, 15, 0.65); /* Derived from primary */
+
+    /* Typography Settings */
+    /* Primary Headline font: Bogue Slab with reliable fallbacks */
+    --font-heading: 'Bogue Slab', 'Roboto Slab', Merriweather, Georgia, serif;
+    /* Body font: TT Commons Pro with geometric sans fallbacks */
+    --font-body: 'TT Commons Pro', 'Inter', Montserrat, -apple-system, sans-serif;
+
+    /* Architecture / Layout Width (Mimics Medium desktop) */
+    --max-reading-width: 680px; 
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Accessibility: Hidden text for screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* =========================================
+   Typography Global Targeting
+   ========================================= */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--text-primary);
+    line-height: 1.25;
+    margin-bottom: 0.5em;
+    font-weight: 700;
+}
+
+p {
+    margin-bottom: 1.6em;
+    /* Clean Medium-style legibility scale */
+    font-size: 1.125rem; /* ~18px base text */
+    letter-spacing: -0.01em; 
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* =========================================
+   Header Layout (Two-Tier Structure)
+   ========================================= */
+
+/* Top Tier */
+.header-top {
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-top-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 56px;
+    gap: 1rem;
+}
+
+.header-left, .header-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.header-right {
+    justify-content: flex-end;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.icon-btn:hover {
+    background-color: rgba(64, 0, 15, 0.05); /* Slight hover state over bg */
+}
+
+/* Logo Image rules */
+.logo {
+    height: 40px; /* Made larger from previous size */
+    width: auto;
+    display: block;
+    min-width: 120px;
+}
+
+/* Bottom Tier (Breadcrumbs / Secondary Header) */
+.header-bottom {
+    background-color: var(--highlight);
+    padding: 0.75rem 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.breadcrumb-container {
+    max-width: var(--max-reading-width);
+    margin: 0 auto;
+}
+
+.breadcrumb {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    font-weight: 500;
+    align-items: center;
+}
+
+.breadcrumb li {
+    display: flex;
+    align-items: center;
+    color: var(--text-light);
+}
+
+.breadcrumb a {
+    color: var(--text-light);
+    opacity: 0.85; /* Visual hierarchy to show link activity */
+    transition: opacity 0.2s ease;
+}
+
+.breadcrumb a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.breadcrumb .separator {
+    margin: 0 0.5rem;
+    font-size: 0.75rem;
+    opacity: 0.6;
+}
+
+.breadcrumb li[aria-current="page"] {
+    opacity: 1;
+}
+
+/* =========================================
+   Main Article Layout & Component Setup
+   ========================================= */
+
+.article-container {
+    max-width: var(--max-reading-width);
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 5rem 1.25rem; /* Spacious padding */
+}
+
+.article-title {
+    /* Fluid typography that scales gracefully */
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+/* Author & Meta Metadata Block */
+.article-meta {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    /* Utilizes highlight brand color dynamically */
+    background: linear-gradient(135deg, var(--highlight), #6a0011);
+}
+
+.author-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.publish-date {
+    font-size: 0.9rem;
+    color: var(--meta-text-color);
+}
+
+/* Hero Image Integration */
+.article-hero-image {
+    /* Full bleed for mobile screens */
+    margin: 0 -1.25rem 2.5rem -1.25rem; 
+}
+
+.article-hero-image img,
+.article-body img {
+    width: 100%;
+    height: auto;
+    display: block;
+    background-color: #f1f1f1; /* Placeholder loader backer */
+    aspect-ratio: 16/9;        /* Control placeholder flow */
+    object-fit: cover;
+}
+
+figcaption {
+    text-align: center;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.85rem;
+    color: var(--meta-text-color);
+    font-family: var(--font-body);
+}
+
+/* In-article Infographics */
+.article-infographic {
+    margin: 3rem 0;
+}
+
+.article-infographic img {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* =========================================
+   Article Body Scope & Formatting
+   ========================================= */
+
+.article-body {
+    /* Refine body styling purely for the narrative column */
+    font-size: 1.125rem; 
+}
+
+.article-body h2 {
+    font-size: 1.75rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.article-body p {
+    color: rgba(64, 0, 15, 0.92); /* Softened extremely dark text vs pure contrast for prolonged reading */
+}
+
+/* Beautiful Blockquote mimicking Medium */
+.article-body blockquote {
+    border-left: 3px solid var(--text-primary);
+    margin: 2.5rem 0;
+    padding-left: 1.25rem;
+    font-style: italic;
+    font-family: var(--font-heading);
+    font-size: 1.35rem; /* Emphasize quote text heavily */
+    line-height: 1.45;
+    color: var(--text-primary);
+}
+
+.article-body blockquote p {
+    margin-bottom: 0; /* Remove bottom margin from paragraph inside blockquote */
+}
+
+/* Lists styling */
+.article-body ul {
+    margin: 0 0 1.6rem 1.5rem;
+    padding: 0;
+}
+
+.article-body li {
+    margin-bottom: 0.75rem;
+    color: rgba(64, 0, 15, 0.92);
+    /* Improve alignment */
+    padding-left: 0.25rem;
+}
+
+/* =========================================
+   Media Queries (Responsive Thresholds)
+   ========================================= */
+
+/* Display search bar on all devices */
+.header-center {
+    display: flex;
+    flex-grow: 1;
+    max-width: 480px;
+}
+
+.search-form {
+    display: flex;
+    width: 100%;
+    height: 42px;
+    border-radius: 21px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+}
+
+.search-input {
+    flex-grow: 1;
+    border: none;
+    padding: 0 1.25rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    outline: none;
+    color: var(--text-primary);
+    background-color: transparent;
+}
+
+.search-input::placeholder {
+    color: rgba(64, 0, 15, 0.4);
+}
+
+/* Search button updated to greyscale */
+.search-submit {
+    background-color: #616161; /* Dark grey */
+    border: none;
+    width: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.search-submit:hover {
+    background-color: #424242; /* Deeper grey */
+}
+
+/* =========================================
+   More to Read Section
+   ========================================= */
+
+.more-to-read {
+    margin-top: 4rem;
+}
+
+.section-divider {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.section-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.reading-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 600px) {
+    .reading-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.reading-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.card-thumb {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+}
+
+.card-content h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    color: var(--meta-text-color);
+    margin-bottom: 0;
+}
+
+/* =========================================
+   Footer Styling
+   ========================================= */
+
+.main-footer {
+    background-color: var(--text-primary);
+    color: var(--text-light);
+    padding: 4rem 1.25rem;
+    margin-top: 4rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-links a {
+    color: var(--text-light);
+    opacity: 0.7;
+    font-size: 0.9rem;
+    transition: opacity 0.2s;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+}
+
+.footer-logo {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-small {
+    height: 24px;
+    opacity: 0.8;
+}
+
+.footer-logo p {
+    font-size: 0.8rem;
+    opacity: 0.5;
+    margin: 0;
+}
+
+/* Adapt for Desktop constrained columns (Medium-like) */
+@media (min-width: 720px) {
+    .article-hero-image {
+        /* Remove full bleed, align directly with text paragraph blocks */
+        margin: 0 0 3rem 0;
+    }
+    
+    .article-hero-image img {
+        /* Subtle corner radius for inner column images */
+        border-radius: 4px;
+    }
+    
+    .article-container {
+        padding-top: 3.5rem;
+    }
+}
+
