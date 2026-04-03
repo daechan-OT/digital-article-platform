@@ -388,6 +388,12 @@ figcaption {
     margin: 3rem 0;
 }
 
+.article-infographic--sm {
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .article-infographic img {
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
